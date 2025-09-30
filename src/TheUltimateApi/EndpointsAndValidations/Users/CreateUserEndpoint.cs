@@ -1,9 +1,10 @@
 ﻿using Application.Features.Users;
 using FastEndpoints;
+using TheUltimateApi.EndpointsAndValidations.Users;
 
 namespace TheUltimateApi.Endpoints.Users;
 
-public class CreateUserEndpoint : Endpoint<CreateUserRequest, CreateUserResponse>
+public class CreateUserEndpoint : Endpoint<CreateUserRequest, CreateUserResponse, CreateUserMapper>
 {
     public required IUserHandler UserHandler {  get; set; }
 
@@ -15,9 +16,9 @@ public class CreateUserEndpoint : Endpoint<CreateUserRequest, CreateUserResponse
 
     public override async Task HandleAsync(CreateUserRequest req, CancellationToken ct)
     {
-        var response = await UserHandler.CreateUser(req);
-
-        // Send response
+        var mappedUser = Map.ToEntity(req);
+        var newUser = await UserHandler.CreateUser(mappedUser);
+        var response = Map.FromEntity(newUser);
         await Send.OkAsync(response);
     }
 }
