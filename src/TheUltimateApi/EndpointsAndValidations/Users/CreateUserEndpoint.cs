@@ -5,12 +5,7 @@ namespace TheUltimateApi.Endpoints.Users;
 
 public class CreateUserEndpoint : Endpoint<CreateUserRequest, CreateUserResponse>
 {
-    private readonly IUserHandler _handler;
-
-    public CreateUserEndpoint(IUserHandler handler)
-    {
-        _handler = handler;
-    }
+    public required IUserHandler UserHandler {  get; set; }
 
     public override void Configure()
     {
@@ -20,7 +15,7 @@ public class CreateUserEndpoint : Endpoint<CreateUserRequest, CreateUserResponse
 
     public override async Task HandleAsync(CreateUserRequest req, CancellationToken ct)
     {
-        var response = await _handler.CreateUser(req);
+        var response = await UserHandler.CreateUser(req);
 
         // Send response
         await Send.OkAsync(response);

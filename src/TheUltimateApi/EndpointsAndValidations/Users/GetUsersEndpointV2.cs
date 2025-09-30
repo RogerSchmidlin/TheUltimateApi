@@ -5,12 +5,7 @@ namespace TheUltimateApi.Endpoints.Users;
 
 public class GetUsersEndpointV2 : Endpoint<GetUsersRequest, GetUsersResponse>
 {
-    private readonly IUserHandler _handler;
-
-    public GetUsersEndpointV2(IUserHandler handler)
-    {
-        _handler = handler;
-    }
+    public required IUserHandler UserHandler;
 
     public override void Configure()
     {
@@ -21,7 +16,7 @@ public class GetUsersEndpointV2 : Endpoint<GetUsersRequest, GetUsersResponse>
 
     public override async Task HandleAsync(GetUsersRequest req, CancellationToken ct)
     {
-        var response = await _handler.GetUsers(req);
+        var response = await UserHandler.GetUsers(req);
         response.Users.Add(new GetUserResponse { User = new UserDto { Name = "User Version 1" } });
 
         // Send response

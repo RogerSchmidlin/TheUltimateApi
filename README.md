@@ -13,3 +13,4 @@ The final result should include
 - SDK auto generation
 - caching
 - DTO mapping
+- Security - Authorisation
