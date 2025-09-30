@@ -16,7 +16,7 @@ builder.Services
 
 var app = builder.Build();
 
-// Use FastEndpoints
+// Use FastEndpoints fff
 app.UseFastEndpoints()
     .UseDefaultExceptionHandler()
     .UseSwaggerGen();
