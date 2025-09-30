@@ -1,6 +1,8 @@
-﻿namespace Application.Features.Users;
+﻿using Application.Features.Users;
 using FastEndpoints;
 using FluentValidation;
+
+namespace TheUltimateApi.Endpoints.Users;
 
 public class CreateUserValidator : Validator<CreateUserRequest>
 {

@@ -1,7 +1,7 @@
 ﻿using Application.Features.Users;
 using FastEndpoints;
 
-namespace FastEndpointsDemo.Endpoints.Users;
+namespace TheUltimateApi.Endpoints.Users;
 
 public class CreateUserEndpoint : Endpoint<CreateUserRequest, CreateUserResponse>
 {
