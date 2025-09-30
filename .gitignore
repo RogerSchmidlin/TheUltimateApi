@@ -1,0 +1,90 @@
+## Visual Studio ##
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results ##
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet packages ##
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.nuget.props
+*.nuget.targets
+
+## Azure build artifacts ##
+csx/
+*.build.csdef
+
+## MSTest test results ##
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## NUNIT ##
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+## ASP.NET Scaffolding ##
+ScaffoldingReadMe.txt
+
+## Visual Studio cache/options ##
+.vscode/
+.vsconfig
+*.tlog
+*.cache
+
+## User-specific files ##
+*.userprefs
+*.rsuser
+
+## Publish outputs ##
+publish/
+dist/
+out/
+
+## Dotnet tools ##
+*.dotCover
+*.dotTrace
+*.dotMemory
+
+## Others ##
+*.dbmdl
+*.bak
+*.mdf
+*.ldf
+*.sql
+*.sqlite
+*.sdf
+
+## Environment files ##
+.env
+.env.*
+
+## JetBrains Rider ##
+.idea/
+*.sln.iml
+
+## macOS/Linux ##
+.DS_Store
+Thumbs.db
+*.swp
+
+## Logs ##
+*.log
+
+## Temporary ##
+*.tmp
+*.temp
+
+## Generated files ##
+wwwroot/lib/
+node_modules/

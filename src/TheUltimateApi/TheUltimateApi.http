@@ -1,0 +1,6 @@
+@TheUltimateApi_HostAddress = https://localhost:44323
+
+GET {{TheUltimateApi_HostAddress}}/users/
+Accept: application/json
+
+###
