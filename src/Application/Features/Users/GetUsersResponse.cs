@@ -2,6 +2,6 @@
 
 public class GetUsersResponse
 {
-    List<GetUserResponse> Users { get; set; } = new List<GetUserResponse>();
+    public List<GetUserResponse> Users { get; set; } = new List<GetUserResponse>();
 }
 

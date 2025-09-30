@@ -22,6 +22,7 @@ public class GetUsersEndpointV2 : Endpoint<GetUsersRequest, GetUsersResponse>
     public override async Task HandleAsync(GetUsersRequest req, CancellationToken ct)
     {
         var response = await _handler.GetUsers(req);
+        response.Users.Add(new GetUserResponse { User = new UserDto { Name = "User Version 1" } });
 
         // Send response
         await Send.OkAsync(response);

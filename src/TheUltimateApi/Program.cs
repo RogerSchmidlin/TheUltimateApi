@@ -19,7 +19,9 @@ var app = builder.Build();
 // Use FastEndpoints fff
 app.UseFastEndpoints(c =>
     {
+        c.Endpoints.RoutePrefix = "api";
         c.Versioning.Prefix = "v";
+        c.Versioning.PrependToRoute = true;
     })
     .UseDefaultExceptionHandler()
     .UseSwaggerGen();
