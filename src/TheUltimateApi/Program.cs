@@ -17,7 +17,10 @@ builder.Services
 var app = builder.Build();
 
 // Use FastEndpoints fff
-app.UseFastEndpoints()
+app.UseFastEndpoints(c =>
+    {
+        c.Versioning.Prefix = "v";
+    })
     .UseDefaultExceptionHandler()
     .UseSwaggerGen();
 

@@ -20,7 +20,25 @@ public static class ConfigurationServices
             .AddFastEndpoints()
 
             // configure Swagger for FastEndpoints
-            .SwaggerDocument();
+            .SwaggerDocument(o =>
+            {
+                o.DocumentSettings = s =>
+                {
+                    s.DocumentName = "Initial Release";
+                    s.Title = "The Ultimate API";
+                    s.Version = "v0";
+                };
+            })
+           .SwaggerDocument(o =>
+           {
+               o.MaxEndpointVersion = 1;
+               o.DocumentSettings = s =>
+               {
+                   s.DocumentName = "Release 1";
+                   s.Title = "The New Ultimate API";
+                   s.Version = "v1";
+               };
+           });
 
         return services;
     }
